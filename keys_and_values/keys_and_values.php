@@ -1,13 +1,16 @@
 <?php
+/*
+There are 2 keys in this array: first_name, last_name
+The value in the key 'first_name' is 'Michael'.
+The value in the key 'last_name' is 'Choi'.
+*/
+$users['first_name'] = 'Michael';
+$users['last_name']  = 'Choi';
 
-function print_lists($array){
-	foreach($array as $value){
-		echo '<li>'. $value .'</li>';
-	}
-	return;
+echo "There are 2 keys in this array: {$users['first_name']}, and {$users['last_name']}. <br/>";	
+
+foreach($users as $key => $value){
+	echo "The value in the key {$key} is {$value}. <br/>";
 }
-
-$sample = array(1,2,3,4,5,6,7,8,9,10);
-print_lists($sample);
 
 ?>
