@@ -12,7 +12,7 @@ function multiply($array){
 	$array_sum = array();
 	for($i = 0; $i < count($array); $i++){
 		$array_sum[$i] = $array[$i]*5;
-		echo($array_sum);
+	echo($array_sum[$i]);
 	}
 }
 $array = array(1,2,3,4,5);
