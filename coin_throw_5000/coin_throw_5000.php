@@ -13,26 +13,26 @@ Attempt #4: Throwing a coin... It's a head! ... Got 3 head(s) so far and 1 tail(
 Attempt #5000: Throwing a coin... It's a head! ... Got 2412 head(s) so far and 2588 tail(s) so far 
 Ending the program - thank you!
 */
+function coin_throw(){
+	$heads= 0;
+	$tails= 0;
 
-for($i = 1; $i <= 100; $i++){
-	$numb = rand(50,100);
-	echo "<h1>Your Score is: $numb.</h1><h2>Your Grade is: ";
+	echo "<h1>Starting the program</h1>";
 
-	if($numb < 70){
-		echo "D";
-	}
-	elseif($numb <=79){
-		echo "C";
-	}
-	elseif($numb <=89){
-		echo "B";
-	}
-	elseif($numb <= 100){
-		echo "A";
-	}
+	for($i= 1; $i < 5000; $i++){
 	
-echo "</h2>";
-$numb;
-}
+	$score = rand(0, 1);
+		
+		if($score == 0){	
+			$heads = $heads+1;
+			echo "<div>Attempt #{$i}: Throwing a coin... It's a head!... Got {$heads} head(s) so far and {$tails} tail(s) so far</div>";}	
+		
+		elseif($score == 1){
+			$tails = $tails+1;
+			echo "<div>Attempt #{$i}: Throwing a coin... It's a tail!... Got {$heads} head(s) so far and {$tails} tail(s) so far</div>";}
+		}
 
+echo "<div>Attempt #$i: Throwing a coin... It's a '$heads || $tails'... Got {$heads} heads(s) so far and {$tails} tail(s) so far <h2>Ending the program - thank you!</h2></div>";		
+}	
+coin_throw()
 ?> 
