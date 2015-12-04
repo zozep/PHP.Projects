@@ -31,7 +31,8 @@ for($i = 1; $i <= 100; $i++){
 	elseif($numb <= 100){
 		echo "A";
 	}
-	echo "</h2>";
+	
+echo "</h2>";
 $numb;
 }
 
