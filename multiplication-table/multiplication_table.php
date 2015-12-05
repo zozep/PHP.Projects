@@ -9,9 +9,10 @@ Spend up to 5-10 minutes to make this look pretty using CSS!
 
 
 ?>
-<html>
+<html> 
 <head>
 	<title>multiplication talbe</title>
+
 	<style type="text/css">
 		* {
 			padding: 0px auto;
@@ -19,7 +20,7 @@ Spend up to 5-10 minutes to make this look pretty using CSS!
 			border: 0px;
 		}
 		table {
-			border-collapse: collapse;
+			border-collapse: collapse;  
 		}
 		td, th {
 			border: 1px solid black;
