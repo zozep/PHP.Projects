@@ -7,35 +7,35 @@ Spend up to 5-10 minutes to make this look pretty using CSS!
 
 */
 
-
 ?>
+<style type="text/css">
+	* {
+		padding: 0px auto;
+		margin: 0px auto;
+		border: 0px;
+	}
+	table {
+		border-collapse: collapse;  
+	}
+	td, th {
+		border: 1px solid black;
+		width: 30px;
+		height: 30px;
+		text-align: center;
+	}
+	tr:nth-child(odd) td:not(:first-child) {
+		background-color: #c6c6c6;
+	}
+	th, strong {
+		font-size: 20px;
+	}
+</style>
+
 <html> 
 <head>
 	<title>multiplication talbe</title>
-
-	<style type="text/css">
-		* {
-			padding: 0px auto;
-			margin: 0px auto;
-			border: 0px;
-		}
-		table {
-			border-collapse: collapse;  
-		}
-		td, th {
-			border: 1px solid black;
-			width: 30px;
-			height: 30px;
-			text-align: center;
-		}
-		tr:nth-child(odd) td:not(:first-child) {
-			background-color: #c6c6c6;
-		}
-		th, strong {
-			font-size: 20px;
-		}
-	</style>
 </head>
+
 <body>
 	<table>
 		<thead>
