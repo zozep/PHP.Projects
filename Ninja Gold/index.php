@@ -7,7 +7,6 @@ if(!isset($_SESSION["gold"])){
 
 if(!isset($_SESSION["activities"])){
 	$_SESSION["activities"] = [];
-
 }
 ?>
 
