@@ -2,28 +2,30 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>PHP demo</title>
-        <meta name="description" content="This is php demo">
+        <title>Survey Form PHP</title>
+        <meta name="description" content="This is a survey Form">
         <link rel="stylesheet" href="xyz" media="screen">
     </head>
 
-
 <body>
-<form action="process.php" method = "post">
-	<h2>name:</h2>
+<form action="result.php" method = "post">
+	<h2> Your name:</h2>
 	<input name="name" type="text">
 
-	<h2>quest:</h2>
-	<input name="quest" type="text">
+	<h2>Dojo Location:</h2>
+	<input name="location" type="text">
 
-	<h2>color:</h2>
-	<select name="color">
-		<option value="red">Red</option>
-		<option value="green">Green</option>
-		<option value="blue">Blue</option>
+	<h2>Favorite Language:</h2>
+	<select name="language">
+		<option value="python">python</option>
+		<option value="javascript">javascript</option>
+		<option value="php">php</option>
 	</select>
 	<br>
-	<input value="Click Me" type="submit">
+
+	<h2>Comment (optional):</h2>
+	<textarea name="comment"></textarea>
+	<input value="submit" type="submit">
 	<br>	
 </form>
 </body>
