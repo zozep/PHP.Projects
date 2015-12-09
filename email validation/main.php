@@ -7,24 +7,22 @@ require_once('connection.php');
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>QuotingDojo</title>
+	<title>email validations</title>
 	<link rel="styleshset" type="text/css" href="style.css">
 	<meta charset="utf-8">
 </head>
 <body>
-	<div id="container">
-		<h1>here are the awesome quotes!</h1>
+		<h1>The emails you entered are:</h1>
 		<?php
 
-		$getall = "SELECT * FROM names";
+		$getall = "SELECT * FROM emails";
 
 		$data = fetch_all($getall);
 
 		foreach($data as $key => $value) {
-				echo '&ldquo;' . $value['quote'] . '&rdquo; <br/>
-				-' . $value['name'] . ' at ' . $value['created_at'] . '<br/><hr/><br/><br/>';
+				echo '&ldquo;' . $value['emails'] . '&rdquo; <br/>
+				-' . $value['emails'] . ' at ' . $value['created_at'] . '<br/><hr/><br/><br/>';
 			}
 		?>
-	</div>
 </body>
 </html>
