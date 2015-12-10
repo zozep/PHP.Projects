@@ -7,6 +7,11 @@
     </head>
 
 <body>
-
+	<form action='process.php' method='post'>
+	    First-name:<input type='text' name='first_name'>
+	    Last-name: <input type='text' name='last_name'>
+	    Email address: <input type='text' name='email'>
+	    <input type='submit' value='add user!'>
+	</form>
 </body>
 </html>
