@@ -7,9 +7,9 @@
         <link rel="stylesheet" href="stylesheet.css">
     </head>
     <style>
-    	 #container{
+    	#container{
     		width: 350px;
-    		height: 350px;
+    		height: 400px;
     		border: 1px solid black;
     		padding: 15px;
     		margin: 15px auto;
@@ -27,23 +27,24 @@
 <body>
 	<div id="container">
 		<form action='result.php' method='post'>
-		    Your Name:<input type='text' name='name' placeholder='Your name'>	    
+		    <h3>Name</h3>
+		    <input type='text' name='name' placeholder='Your name'>	    
 		    <h3>Dojo Location</h3>
-		    <select>
+		    <select name="location">
 		    	<option value="seattle">Seattle</option>
 		    	<option value="la">LA</option>
 		    	<option value="dallas">Dallas</option>
 		    </select>
 
 		    <h3>Favorite Language</h3>
-		    <select>
+		    <select name="language">
 		    	<option value="php">PHP</option>
 		    	<option value="javascript">Javascript</option>
 		    	<option value="python">Python</option>
 		    </select>
 
 		    <h3>Your Comment</h3>
-		    <textarea></textarea>
+		    <textarea name="comment"></textarea>
 
 		    <div id="breakbox"></div>
 
