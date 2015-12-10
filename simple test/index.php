@@ -8,9 +8,9 @@
 
 <body>
 	<form action='process.php' method='post'>
-	    First-name:<input type='text' name='first_name'>
-	    Last-name: <input type='text' name='last_name'>
-	    Email address: <input type='text' name='email'>
+	    First-name:<input type='text' name='first_name' placeholder='First name'>
+	    Last-name: <input type='text' name='last_name' placeholder='Last name'>
+	    Email address: <input type='text' name='email' placeholder='email@domain.com'>
 	    <input type='submit' value='add user!'>
 	</form>
 </body>
