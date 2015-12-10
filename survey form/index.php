@@ -4,7 +4,6 @@
         <meta charset="utf-8">
         <title>Survey Form PHP</title>
         <meta name="description" content="This is a survey Form">
-        <link rel="stylesheet" href="xyz" media="screen">
     </head>
 
 <body>
