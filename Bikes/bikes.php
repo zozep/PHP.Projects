@@ -14,13 +14,13 @@ Class Bike{
 		echo "Maximum Speed: ".$this->max_speed. "<br>";
 		echo "Miles ridden: ".$this->miles. "<br><br>";
 	}
-
+ x
 	public function drive(){
 		$this-> miles+=10;
 		echo "Driving" . $this->miles. "<br>";
 		return $this;
 	}
-
+fdjd j j k                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     kkkkkkkk                                                                                                                                                                    fffof                                             ffffffffooo
 	public function reverse(){
 		$this->miles-=5;
 		echo "Reversing" . $this->miles. "<br>";
@@ -33,6 +33,12 @@ Class Bike{
 }
 
 $BMX = new Bike(419, 20);
-echo $BMX->drive()->drive()->drive()->reverse()->displayInfo()->
-
+$tandem = new Bike(1000, 10);
+echo $BMX->drive()->drive()->drive()->reverse()->displayInfo()-> 
+s
 ?>
+
+
+	public class Vehicle(i
+
+
