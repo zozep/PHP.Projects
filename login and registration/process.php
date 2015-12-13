@@ -18,8 +18,14 @@ function register_user($post) {
 	if(empty($post['last_name'])) { 
 		$_SESSION['errors'][] = "last name can't be blank!";
 	}
+	if(empty($post['password'])) { 
+		$_SESSION['errors'][] = "password field is required!";
+	}
 	if($post['password'] !== $post['confirm_password']) {
 		$_SESSION['errors'][] = "passwords need to match!";
+	}
+	if(!filter_var($post['email'], FILTER_VALIDATE_EMAIL)) { 
+		$_SESSION['errors'][] = "valid email address is required!";
 	}
 	header('location: index.php');
 	exit();
