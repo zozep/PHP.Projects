@@ -5,8 +5,13 @@ require('connection.php');
 if(isset($_POST['action']) && $_POST['action'] == 'register'){
 	register_user($_POST);
 }
-if(isset($_POST['action']) && $_POST['action'] == 'login'){
+elseif(isset($_POST['action']) && $_POST['action'] == 'login'){
 	login_user($_POST);
+}
+else {  //logout
+	session_destroy();
+	header('location: index.php');
+	exit();
 }
 
 function register_user($post) {
@@ -36,7 +41,6 @@ function register_user($post) {
 	} else { //insert data into db-----//
 		$query = "INSERT INTO users (first_name, last_name, password, email, created_at, updated_at)
 				  VALUES ('{$post['first_name']}', '{$post['last_name']}', '{$post['password']}', '{$post['email']}', NOW(), NOW())";
-		
 		run_mysql_query($query);
 		$_SESSION['success_message'] = "User successfully created!";
 		header('location: index.php');
@@ -45,20 +49,19 @@ function register_user($post) {
 }
 
 	function login_user($post) {
-		$query = "SELECT * FROM users WHERE users.password = '{post['password']}'
+		$query = "SELECT * FROM users WHERE users.password = '{$post['password']}'
 				  AND users.email = '{$post['email']}'";
-	
-		$user = fetch_all($query); // go and attempt to grab user with above credentials//
-		if(count($user) > 0){
-			$_SESSION['user_id'] = $user[0]['id'];
-			$_SESSION['first_name'] = $user[0]['first_name'];
+		// var_dump($query);
+		// die();
+		$user = fetch_record($query); // go and attempt to grab user with above credentials//
+		if($user['email'] && $user['password']) {
+			$_SESSION['user_id'] = $user['id'];
+			$_SESSION['first_name'] = $user['first_name'];
 			$_SESSION['logged_in'] = TRUE;
 			header('location: success.php');
-			exit();
 		} else {
 			$_SESSION['errors'][] = "can't find a user with those credentials!";
 			header('location: index.php');
-			exit();
 		}
 	}
 ?>
