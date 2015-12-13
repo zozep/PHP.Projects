@@ -30,7 +30,6 @@ function fetch_all($query)
   $data = array();
   global $connection;
   $result = $connection->query($query);
-  var_dump($result);
   while($row = mysqli_fetch_assoc($result)) 
   {
     $data[] = $row;
