@@ -15,6 +15,10 @@ session_start();
 		}
 		unset($_SESSION['errors']);
 	}
+	if(isset($_SESSION['success_message'])){
+		echo "{$_SESSION['success_message']} <br>";
+		unset($_SESSION['success_message']);
+	}
 ?>
 	<h2>Register</h2>
 	<form action="process.php" method="post">
