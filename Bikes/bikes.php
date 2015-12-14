@@ -8,9 +8,15 @@ Class Bike{
 		$this->max_speed = $max_speed;
 		$this->miles = 0;
 	}
+}
+
+$bmx = new Bike(250, "20mph");
+echo $bmx-> price . "<br>"; //250 
+echo $bmx-> max_speed. "<br>"; //20mph
+echo $bmx-> miles. "<br>"; //0
 
 	public function display_info(){
-		echo "Price: $".this->price. "<br>";
+		echo "Price: " . $this->price. "<br>";
 		echo "Maximum Speed: ".$this->max_speed. "<br>";
 		echo "Miles ridden: ".$this->miles. "<br><br>";
 	}
@@ -31,9 +37,5 @@ Class Bike{
 		return $this;
 	}
 }
-
-$BMX = new Bike(419, 20);
-$tandem = new Bike(1000, 10);
-echo $BMX->drive()->drive()->drive()->reverse()->displayInfo()-> 
 
 ?>
