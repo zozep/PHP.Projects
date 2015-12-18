@@ -20,18 +20,22 @@ class Sessions extends CI_Controller {
 		//depending on the result, show error or log user in
 		if ($user && password_verify($this->input->post('password'), $user['password']))
 		{
-			$this->session->set_userdata();
-		}
-		$user_info = array(
-			'id' => $user['id'],
-			'first_name' => $user['first_name'],
-			'last_name' => $user['last_name'],
-			'is_logged_in' => TRUE
-			);
+			$user_info = array(
+				'id' => $user['id'],
+				'first_name' => $user['first_name'],
+				'last_name' => $user['last_name'],
+				'is_logged_in' => TRUE
+			);		
 		$this->session->set_userdata($user_info);
 		redirect(base_url("success"));
+		}
+		else
+		{
+			$this->session->set_flashdata("error", "Invalid email or password");
+			redirect(base_url("sessions/new"));
+		}
 	}
-
+	
 	public function success()
 	{
 		if ($this->session->userdata('is_logged_in') == FALSE)

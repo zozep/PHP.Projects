@@ -3,6 +3,7 @@
 	<title>Log In</title>
 </head>
 <body>
+	<?= $this->session->flashdata('error')  ?>
 	<form action="/sessions/create" method="post">
 		<fieldset>
 			<legend>Log in</legend>
