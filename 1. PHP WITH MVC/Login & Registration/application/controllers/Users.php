@@ -17,11 +17,30 @@ class Users extends CI_Controller {
 		//load the model
 		$this->load->model("User");
 
-		// //delegate the task of creating user to the model
-		$this->User->create($this->input->post());
+		//check user input
+		$this->load->library("form_validation");
 
-		//go to the login page
-		redirect("/sessions/new");
+		//delegate the model the task of validating user input
+		$validation_result = $this->User->validate($this->input->post());
+
+		//depending on validation checks, show error or create user 
+		if($validation_result == TRUE)
+		{
+			// //delegate the task of creating user to the model
+			$this->User->create($this->input->post());
+
+			//go to the login page
+			redirect(base_url("sessions/new"));
+		}
+		else
+		{
+			//or show error
+			$this->session->set_flashdata("errors", validation_errors());
+
+			//go back to register form
+			redirect(base_url("users/new"));
+		}
+
 	}
 
 }

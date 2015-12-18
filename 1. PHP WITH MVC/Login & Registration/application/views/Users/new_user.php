@@ -3,6 +3,7 @@
 	<title>Register</title>
 </head>
 <body>
+	<?= $this->session->flashdata('errors'); ?>
 	<form action="/users/create" method="post">
 		<fieldset>
 			<legend>Register</legend>

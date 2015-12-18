@@ -11,7 +11,7 @@ $route['sessions/new'] = "Sessions/new_session";
 // 3. Route to do the actual registration
 $route['users/create'] = "Users/create";
 
-// 4. Route to do th eactual log in
+// 4. Route to do the actual log in
 $route['sessions/create'] = "Sessions/create";
 
 // 5. Route to log out

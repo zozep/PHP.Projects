@@ -20,4 +20,12 @@ class User extends CI_Model {
 		$value = array($email);
 		return $this->db->query($query, $value)->row_array();
 	} 
+
+	public function validate($post)
+	{
+		$this->form_validation->set_rules("first_name", "First name", "required");
+
+		return $this->form_validation->run();
+		
+	}
 } 
