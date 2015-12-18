@@ -3,11 +3,10 @@
 class Sessions extends CI_Controller {
 
 	//method to shwo login form
-	
+	public function new_session()
+	{
+		$this->load->view("Sessions/new_session");
+	}
 	//method to do actual logging in
 
-	public function index()
-	{
-		$this->load->view('sessions');
-	}
 }
