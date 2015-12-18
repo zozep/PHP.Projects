@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>email validation</title>
+	<title>login and registration</title>
 </head>
 <body>
 	<form action="process.php" method="post">

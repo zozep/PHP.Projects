@@ -13,9 +13,9 @@ this should dump B which contains [10, 20, 50, 80].
 
 function multiply($array){
 	$array_sum = array();
-	for($i = 0; $i < count($array); $i++){
-		$array_sum[$i] = $array[$i]*5;
-		echo($array_sum);
+	for($i = 0; $i <= count($array); $i++){
+		$array_sum[$i] = $array $i * 5;
+		echo "($array_sum):;
 	}
 }
 $array = array(1,2,3,4,5);
