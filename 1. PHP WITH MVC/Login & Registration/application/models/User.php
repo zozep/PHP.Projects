@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 	
-class User extends CI_Controller {
+class User extends CI_Model {
 
 	public function create($post)
 	{
@@ -12,5 +12,12 @@ class User extends CI_Controller {
 			password_hash($post['password'], PASSWORD_BCRYPT)
 		);
 		return $this->db->query($query, $values);
+	}
+
+	public function get_user_by_email($email)
+	{
+		$query = "SELECT * FROM users WHERE email = ?";
+		$value = array($email);
+		return $this->db->query($query, $value)->row_array();
 	} 
 } 

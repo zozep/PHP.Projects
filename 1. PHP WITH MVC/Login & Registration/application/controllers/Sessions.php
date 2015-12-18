@@ -8,5 +8,36 @@ class Sessions extends CI_Controller {
 		$this->load->view("Sessions/new_session");
 	}
 	//method to do actual logging in
+	public function create()
+	{
+		//load the model
+		$this->load->model("User");
 
-}
+		//delegate teh task of checking user input to the model
+		$user = $this->User->get_user_by_email($this->input->post("email"));
+
+		//depending on the result, show error or log user in
+		if ($user && password_verify($this->input->post('password'), $user['password']))
+		{
+			$this->session->set_userdata();
+		}
+		$user_info = array(
+			'id' => $user['id'],
+			'first_name' => $user['first_name'],
+			'last_name' => $user['last_name'],
+			'is_logged_in' => TRUE
+			);
+		$this->session->set_userdata($user_info);
+		redirect("/success");
+	}
+	public function success()
+	{
+		if ($this->session->userdata('is_logged_in')) == FALSE)
+		{
+			redirect('/sessions/new');
+		}
+		$this->load->view("success");
+	}
+
+	
+} 
