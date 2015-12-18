@@ -14,6 +14,9 @@ $route['users/create'] = "Users/create";
 // 4. Route to do th eactual log in
 $route['sessions/create'] = "Sessions/create";
 
+// 5. Route to log out
+$route['sessions/destroy'] = "Sessions/destroy";
+
 $route['success'] = "Sessions/success";
 
 $route['404_override'] = '';

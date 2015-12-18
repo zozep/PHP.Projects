@@ -7,6 +7,7 @@ class Sessions extends CI_Controller {
 	{
 		$this->load->view("Sessions/new_session");
 	}
+
 	//method to do actual logging in
 	public function create()
 	{
@@ -28,16 +29,21 @@ class Sessions extends CI_Controller {
 			'is_logged_in' => TRUE
 			);
 		$this->session->set_userdata($user_info);
-		redirect("/success");
+		redirect(base_url("success"));
 	}
+
 	public function success()
 	{
-		if ($this->session->userdata('is_logged_in')) == FALSE)
+		if ($this->session->userdata('is_logged_in') == FALSE)
 		{
-			redirect('/sessions/new');
+			redirect(base_url('sessions/new'));
 		}
 		$this->load->view("success");
 	}
 
-	
+	public function destroy()
+	{
+		$this->session->sess_destroy();
+		redirect(base_url());
+	}
 } 

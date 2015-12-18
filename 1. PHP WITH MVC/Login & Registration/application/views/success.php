@@ -6,7 +6,7 @@
 <body>
 	<h2>welcome back, <?= $this->session->userdata('first_name') ?> </h2>
 
-	<form>
+	<form action="/sessions/destroy" method="post">
 		<input type="submit" value="Log Out">
 	</form>
 </body>
