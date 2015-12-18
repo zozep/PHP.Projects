@@ -40,7 +40,5 @@ class Users extends CI_Controller {
 			//go back to register form
 			redirect(base_url("users/new"));
 		}
-
 	}
-
 }

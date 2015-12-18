@@ -17,6 +17,7 @@ $route['sessions/create'] = "Sessions/create";
 // 5. Route to log out
 $route['sessions/destroy'] = "Sessions/destroy";
 
+//6. Route to success
 $route['success'] = "Sessions/success";
 
 $route['404_override'] = '';

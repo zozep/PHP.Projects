@@ -25,12 +25,10 @@ class User extends CI_Model {
 	{
 		$this->form_validation->set_rules("first_name", "first name", "required");
 		$this->form_validation->set_rules("last_name", "last name", "required");
-		$this->form_validation->set_rules("email", "email", "required|valid_email");
+		$this->form_validation->set_rules("email", "email", "required|valid_email|is_unique[users.email]");
 		$this->form_validation->set_rules("password", "password", "required|matches[password_confirmation]");
 		$this->form_validation->set_rules("password_confirmation", "password confirmation", "required");
 
-
 		return $this->form_validation->run();
-		
 	}
 } 
