@@ -2,8 +2,4 @@
 
 $route['default_controller'] = "Users";
 
-$route['default_controller'] = "Users";
-
-
-
 $route['404_override'] = '';
