@@ -23,7 +23,10 @@ class User extends CI_Model {
 
 	public function validate($post)
 	{
-		$this->form_validation->set_rules("first_name", "First name", "required");
+		$this->form_validation->set_rules("first_name", "first name", "required");
+		$this->form_validation->set_rules("last_name", "last name", "required");
+
+
 
 		return $this->form_validation->run();
 		
