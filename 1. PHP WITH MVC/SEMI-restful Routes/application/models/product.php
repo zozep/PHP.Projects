@@ -26,5 +26,10 @@ class Product extends CI_Model {
 		);
 		$this->db->query($query, $values);
 	}
-	
+
+	public function delete($id)
+	{
+		$query = "DELETE FROM products WHERE id = ?";
+		$this->db->query($query,array($id));
+	}	
 }
