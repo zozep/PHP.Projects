@@ -2,7 +2,6 @@
 
 class Product extends CI_Model {
 
-
 	public function get_all_products()
 	{
 		$query = "SELECT * FROM products";
@@ -35,12 +34,13 @@ class Product extends CI_Model {
 
 	public function update($product)
 	{
-		$query = "UPDATE (mydb. SET name=NULL, desctiption=NULL,price=NULL, created_at=NULL updated_at=NULL id= NULL)";
-		$this->db->query($query,array($id));
+		// $query = UPDATE (`mydb`.`products`  SET `name`='?' SET `description`='?'  SET `price`='?' WHERE `id`='?');
 		$values = array(
 			$product['name'],
 			$product['description'],
-			$product['price']
+			$product['price'],
+			$product['id']
 		);
-		$this->db->query($query, $values);
+		$this->db->query($query,array($id));
+	}
 }
