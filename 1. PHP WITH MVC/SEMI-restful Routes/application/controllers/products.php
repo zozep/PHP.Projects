@@ -25,11 +25,17 @@ class Products extends CI_Controller {
 		$this->Product->create($product);
 		redirect(base_url("products"));
 	}
-
 	public function delete($id)
 	{
 		$this->load->model("Product");
 		$this->Product->delete($id);
+		redirect(base_url("products"));
+	}
+
+	public function update($id)
+	{
+		$this->load->model("Product");
+		$this->Product->update($id);
 		redirect(base_url("products"));
 	}
 }

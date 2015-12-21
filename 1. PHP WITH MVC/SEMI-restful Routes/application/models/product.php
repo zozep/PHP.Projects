@@ -32,4 +32,15 @@ class Product extends CI_Model {
 		$query = "DELETE FROM products WHERE id = ?";
 		$this->db->query($query,array($id));
 	}	
+
+	public function update($product)
+	{
+		$query = "UPDATE (mydb. SET name=NULL, desctiption=NULL,price=NULL, created_at=NULL updated_at=NULL id= NULL)";
+		$this->db->query($query,array($id));
+		$values = array(
+			$product['name'],
+			$product['description'],
+			$product['price']
+		);
+		$this->db->query($query, $values);
 }
