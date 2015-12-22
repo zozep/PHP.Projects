@@ -32,9 +32,9 @@ class Product extends CI_Model {
 		$this->db->query($query,array($id));
 	}	
 
-	public function update($product)
+	public function update($id)
 	{
-		// $query = UPDATE (`mydb`.`products`  SET `name`='?' SET `description`='?'  SET `price`='?' WHERE `id`='?');
+		$query = UPDATE ('products' SET `name`='?' SET `description`='?' SET `price`='?' WHERE `id`='?');
 		$values = array(
 			$product['name'],
 			$product['description'],

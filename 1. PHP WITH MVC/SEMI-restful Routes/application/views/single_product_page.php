@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>semirestful</title>
+	<title>single product</title>
 </head>
 <body>
 	<h2>Product <?= $product['id'] ?> </h2>

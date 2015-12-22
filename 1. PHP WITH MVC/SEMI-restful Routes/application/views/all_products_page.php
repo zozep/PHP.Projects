@@ -20,8 +20,8 @@
 		<td><?= $product['price'] ?></td>
 		<td>
 			<a href="/products/show/<?= $product['id'] ?>">Show</a>
-			<!-- <a href="/">edit</a> -->
-			<a href="/products/delete/<?= $product['id'] ?>"><button>remove</button></a>
+<!-- 			<a href="/products/edit/<?= $product['id'] ?>">edit</a>
+ -->			<a href="/products/delete/<?= $product['id'] ?>"><button>remove</button></a>
 		</td>		
 	</tr>
 	<?php } ?>

@@ -31,7 +31,12 @@ class Products extends CI_Controller {
 		$this->Product->delete($id);
 		redirect(base_url("products"));
 	}
-
+	public function edit($id)
+	{
+		$this->load->model("Product");
+		$this->Product->edit($id);
+		$this->load->view("edit_product_form"));
+	}
 	public function update($id)
 	{
 		$this->load->model("Product");
