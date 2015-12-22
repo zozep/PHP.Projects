@@ -34,7 +34,7 @@ class Product extends CI_Model {
 
 	public function update($id)
 	{
-		$query = UPDATE ('products' SET `name`='?' SET `description`='?' SET `price`='?' WHERE `id`='?');
+		$query = "UPDATE products (SET name=? SET description=? SET price=? WHERE id=?)";
 		$values = array(
 			$product['name'],
 			$product['description'],
