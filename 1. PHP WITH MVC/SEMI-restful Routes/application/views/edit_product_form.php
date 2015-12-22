@@ -8,8 +8,8 @@
 		<label> Description:</label> <input name="description"><br>
 		<label> Price:</label> <input name="price"><br>
 		<br>
-	</form>
 		<input type="submit" value="Update">
+	</form>
 	<a href="/products">Go back</a>
 </body>
 </html>

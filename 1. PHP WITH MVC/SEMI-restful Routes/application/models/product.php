@@ -32,16 +32,15 @@ class Product extends CI_Model {
 		$this->db->query($query,array($id));
 	}	
 
-	public function update($id)
+	public function update($product)
 	{
-		$query = "UPDATE products (SET name=? SET description=? SET price=? WHERE id=?)";
-
+		$query = "UPDATE products SET name = ?, description = ?, price = ? WHERE id = ?";
 		$values = array(
 			$product['name'],
 			$product['description'],
 			$product['price'],
 			$product['id']
 		);
-		$this->db->query($query,array($id));
+		$this->db->query($query,$values);
 	}
 }
