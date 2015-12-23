@@ -42,5 +42,4 @@ class Products extends CI_Controller {
 		$this->Product->update($product);
 		redirect(base_url("products"));
 	}
-
 }
