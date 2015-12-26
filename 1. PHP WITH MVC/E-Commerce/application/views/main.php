@@ -1,1 +1,8 @@
-//php file. but all th ehtml file that you see
+<html>
+<head>
+	<title>welcome</title>
+</head>
+<body>
+	<p>hi</p>
+</body>
+</html>
