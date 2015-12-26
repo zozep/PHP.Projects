@@ -7,8 +7,7 @@ class Main extends CI_Controller {
 	public function index()
 	{
 		$this->view_data['date'] = date('M d, Y');
-		$this->view_data['time'] = date('h:i A');
-
+		$this->view_data['time'] = date('h:i A, l');
 		$this->load->view('time_display', $this->view_data);
 	}
 }
