@@ -17,13 +17,12 @@ class Main extends CI_Model {
 
 	public function create($product)
 	{
-		$query = "INSERT INTO products (description, price, quantity created_at, updated_at) VALUES (?, ?, ?, NOW(), NOW())";
+		$query = "INSERT INTO products (description, price, quantity, created_at, updated_at) VALUES (?, ?, ?, NOW(), NOW())";
 		$values = array(
-			$product['name'],
 			$product['description'],
+			$product['price'],
 			$product['quantity']
 		);
 		$this->db->query($query, $values);
 	}
-
 }

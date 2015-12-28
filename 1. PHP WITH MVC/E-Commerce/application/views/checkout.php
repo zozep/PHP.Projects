@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
 <head>
 	<title>edit product</title>
 </head>
@@ -18,4 +18,4 @@
 		<tbody>
 	<a href="/products">Go back</a>
 </body>
-</html>
+</html> -->
