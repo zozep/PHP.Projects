@@ -15,9 +15,9 @@
 	</tr>
 	<?php foreach ($products as $product) { ?>
 		<tr>
-		<td><?= $product['description'] ?></td>
-		<td><?= $product['price'] ?></td>		
-		<td><?= $product['quantity'] ?></td>
+		<td><?= $product['description'] ?> </td>
+		<td><?= $product['price'] ?> </td>		
+		<td><?= $product['quantity'] ?> </td>
 		<td>
 			<a href="/products/show/<?= $product['id'] ?>">Buy</a>
 		</td>		
