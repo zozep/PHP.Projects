@@ -1,29 +1,46 @@
 <html>
 <head>
-	<title>products</title>
+	<title>Products</title>
 </head>
 
 <body>
-<h2>Add a product</h2>
+	<form action="/products/create" method="post">
+		<fieldset>
+			<legend>Add a product: </legend>
+			<Label>Product Name: </label>
+			<input type="text" name="name">
 
-<table>
-	<tr>
-		<td><b>Product Name</b></td>
-		<td><b>Price ($)</b></td>
-		<td><b>Description</b></td>		
-	</tr>
-	<?php foreach ($products as $product) { ?>
+			<Label>Price ($): </label>
+			<input type="text" name="price">
+
+			<Label>Description: </label>
+			<textarea rows="10" cols="40"></textarea>
+
+			<input type="submit" value="Add">	
+		</fieldset>
+	</form>
+<fieldset>
+	<legend>Product Listing:</legend>
+	<table>
+		<tr>
+			<th>Product Name</th>
+			<th>Price ($)</th>
+			<th>Date Added</th>
+			<th>Action</th>
+		</tr>
+
+		<?php foreach ($products as $product) { ?>
 		<tr>
 		<td><?= $product['name'] ?></td>
 		<td><?= $product['price'] ?></td>
-		<td><?= $product['description'] ?></td>		
+		<td><?= $product['updated_at'] ?></td>
 		<td>
-			<a href="/products/delete/<?= $product['id'] ?>"><button>Remove</button></a>
+			<a href="/products/delete/<?= $product['id'] ?>">Delete</a>
 		</td>		
-	</tr>
-	<?php } ?>
-</table>
+		</tr>
+		<?php } ?>
+	</table>
+</fieldset>
 
-<a href="/products/new"><br>Add a new Product</a>
 </body>
 </html>
