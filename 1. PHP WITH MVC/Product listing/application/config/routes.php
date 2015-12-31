@@ -2,7 +2,7 @@
 
 $route['default_controller'] = "/products";
 
-$route['products/show'] = "/products/show/$1";
+$route['products/show/(:num)'] = "/products/show/$1";
 
 $route['products/new'] = "/products/new_product";
 

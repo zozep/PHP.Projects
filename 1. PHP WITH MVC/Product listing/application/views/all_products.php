@@ -4,7 +4,31 @@
 </head>
 
 <body>
-	<form action="/products/create" method="post">
+<h2> Product Listing: </h2>
+
+<table>
+	<tr>
+		<td>Manufacturer</td>
+		<td>Product Name</td>
+		<td>Price ($)</td>
+		<td>Date Added</td>
+		<td>Actions</td>
+	</tr>
+	<?php foreach ($products as $product) { ?>
+	<tr>
+		<td><?= $product['manufacturer'] ?></td>
+		<td><?= $product['name'] ?></td>
+		<td><?= $product['price'] ?></td>
+		<td><?= $product['created_at'] ?></td>
+		<td>
+			<a href="/products/edit/<?= $product['id'] ?>">Edit</a>
+			<a href="/products/delete/<?= $product['id'] ?>">Delete</a>
+		</td>		
+	</tr>
+	<?php } ?>
+</table>
+
+	<form action="/products/show/<?= $product['id'] ?>" method="post">
 		<fieldset>
 			<legend>Add a product: </legend>
 
@@ -20,28 +44,6 @@
 			<input type="submit" value="Add">	
 		</fieldset>
 	</form>
-<fieldset>
-	<legend>Product Listing:</legend>
-	<table>
-		<tr>
-			<th>Product Name</th>
-			<th>Price ($)</th>
-			<th>Date Added</th>
-			<th>Action</th>
-		</tr>
-
-		<?php foreach ($products as $product) { ?>
-		<tr>
-		<td><?= $product['name'] ?></td>
-		<td><?= $product['price'] ?></td>
-		<td><?= $product['updated_at'] ?></td>
-		<td>
-			<a href="/products/delete/<?= $product['id'] ?>">Delete</a>
-		</td>		
-		</tr>
-		<?php } ?>
-	</table>
-</fieldset>
 
 </body>
 </html>
