@@ -14,7 +14,7 @@
 		<td><b>Actions</b></td>
 	</tr>
 	<?php foreach ($products as $product) { ?>
-		<tr>
+	<tr>
 		<td><?= $product['name'] ?></td>
 		<td><?= $product['description'] ?></td>		
 		<td><?= $product['price'] ?></td>
