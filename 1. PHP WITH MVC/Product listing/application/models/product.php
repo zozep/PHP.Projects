@@ -1,13 +1,13 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Products extends CI_Controller {
-
-	public function index()
+class Product extends CI_Model {
+	
+	public function get_all_products()
 	{
-		$this->load->model('Product');
-		$products = $this->Product->get_all_products();
-		$this->load->view('all_products', array('products' => $products));
+		$query = "SELECT * FROM products";
+		return $this->db->query($query)->result_array();
 	}
+
 // 	public function show($id)
 // 	{
 // 		$this->load->model('Product');

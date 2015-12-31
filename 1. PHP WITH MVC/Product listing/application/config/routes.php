@@ -2,12 +2,12 @@
 
 $route['default_controller'] = "/products";
 
-$route['products/show/(:num)'] = "/products/show/$1";
+// $route['products/create'] = "/products/create/$1";
 
-$route['products/new'] = "/products/new_product";
+// // $route['products/new'] = "/products/new_product";
 
-$route['products/edit'] = "/products/edit/$1";
+// // $route['products/edit/(:num)'] = "/products/edit/$1";
 
-$route['products/update'] = "/products/update/$1";
+// // $route['products/update'] = "/products/update/$1";
 
-$route['404_override'] = '';
+// // $route['404_override'] = '';

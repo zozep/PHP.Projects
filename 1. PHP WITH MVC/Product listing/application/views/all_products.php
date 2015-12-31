@@ -4,9 +4,11 @@
 </head>
 
 <body>
-<h2> Product Listing: </h2>
+<h2> Trader's Store: </h2>
 
-<table>
+<table border="1" style="width:100%">
+	<legend>Product Listing:</legend><br>
+
 	<tr>
 		<td>Manufacturer</td>
 		<td>Product Name</td>
@@ -28,22 +30,27 @@
 	<?php } ?>
 </table>
 
-	<form action="/products/show/<?= $product['id'] ?>" method="post">
-		<fieldset>
-			<legend>Add a product: </legend>
+<br>
 
-			<Label>Manufacturer/Brand: </label>
-			<input type="text" name="manufacturer">
+<form>
+	<fieldset>
+		<legend>Add a product: </legend><br>
 
-			<Label>Product Name: </label>
-			<input type="text" name="name">
+		<Label>Manufacturer/Brand: </label>
+		<input type="text" name="manufacturer"><br>
 
-			<Label>Price ($): </label>
-			<input type="text" name="price">
+		<Label>Product Name: </label>
+		<input type="text" name="name"><br>
 
-			<input type="submit" value="Add">	
-		</fieldset>
-	</form>
+		<Label>Price ($): </label>
+		<input type="text" name="price"><br>
+
+		<Label>Description: </label>
+		<textarea rows="5" cols="30"></textarea>
+
+		<input type="submit" value="Add">	
+	</fieldset>
+</form>
 
 </body>
 </html>
