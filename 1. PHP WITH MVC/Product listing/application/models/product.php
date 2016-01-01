@@ -4,27 +4,21 @@ class Product extends CI_Model {
 	
 	public function get_all_products()
 	{
-		$query = "SELECT * FROM products";
+		$query = "SELECT products.id, products.name, products.price, updated_at, manufacturer_id as manufacturer 
+					FROM products LEFT JOIN manufacturers ON products.manufacturer_id = manufacturers.id";
 		return $this->db->query($query)->result_array();
 	}
 
-// 	public function show($id)
-// 	{
-// 		$this->load->model('Product');
-// 		$product = $this->Product->get_product_by_id($id);
-// 		$this->load->view('single_product_page', array('product' => $product));
-// 	}
-// 	public function new_product()
-// 	{
-// 		$this->load->view('new_product_form');
-// 	}
-// 	public function create()
-// 	{
-// 		$this->load->model("Product");
-// 		$product = $this->input->post();
-// 		$this->Product->create($product);
-// 		redirect(base_url("products"));
-// 	}
+	public function create($product)
+	{
+		$query = "INSERT INTO products (name, price, updated_at, manufacturer_id) VALUES (?, ?, NOW(), ?)";
+		$value = array(
+			$product['name'],
+			$product['price'],
+			$product['manufacturer_id']
+		);
+		$this->db->query($query, $value);
+	}
 // 	public function delete($id)
 // 	{
 // 		$this->load->model("Product");

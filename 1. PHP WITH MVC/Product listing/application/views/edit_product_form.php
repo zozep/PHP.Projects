@@ -11,6 +11,6 @@
 		<input type="submit" value="Update">
 	</form>
 		<tbody>
-	<a href="/products">Go back</a>
+	<a href="/products">Go to Product Listing</a>
 </body>
 </html>

@@ -21,7 +21,7 @@
 		<td><?= $product['manufacturer'] ?></td>
 		<td><?= $product['name'] ?></td>
 		<td><?= $product['price'] ?></td>
-		<td><?= $product['created_at'] ?></td>
+		<td><?= $product['updated_at'] ?></td>
 		<td>
 			<a href="/products/edit/<?= $product['id'] ?>">Edit</a>
 			<a href="/products/delete/<?= $product['id'] ?>">Delete</a>
@@ -32,7 +32,7 @@
 
 <br>
 
-<form>
+<form action="/products/create" method="post">
 	<fieldset>
 		<legend>Add a product: </legend><br>
 

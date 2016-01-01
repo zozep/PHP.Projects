@@ -8,6 +8,14 @@ class Products extends CI_Controller {
 		$products = $this->Product->get_all_products();
 		$this->load->view('all_products', array('products' => $products));
 	}
+	public function create()
+	{
+		$this->load->model("Product");
+		$product = $this->input->post();
+		$this->Product->create($product);
+		redirect(base_url("products"));
+	}
+	
 // 	public function show($id)
 // 	{
 // 		$this->load->model('Product');
@@ -17,13 +25,6 @@ class Products extends CI_Controller {
 // 	public function new_product()
 // 	{
 // 		$this->load->view('new_product_form');
-// 	}
-// 	public function create()
-// 	{
-// 		$this->load->model("Product");
-// 		$product = $this->input->post();
-// 		$this->Product->create($product);
-// 		redirect(base_url("products"));
 // 	}
 // 	public function delete($id)
 // 	{

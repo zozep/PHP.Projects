@@ -2,7 +2,7 @@
 	
 class Sessions extends CI_Controller {
 
-	//method to shwo login form
+	//method to show login form
 	public function new_session()
 	{
 		$this->load->view("Sessions/new_session");
@@ -14,7 +14,7 @@ class Sessions extends CI_Controller {
 		//load the model
 		$this->load->model("User");
 
-		//delegate teh task of checking user input to the model
+		//delegate the task of checking user input to the model
 		$user = $this->User->get_user_by_email($this->input->post("email"));
 
 		//depending on the result, show error or log user in
