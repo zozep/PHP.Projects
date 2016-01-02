@@ -4,18 +4,18 @@ class Product extends CI_Model {
 	
 	public function get_all_products()
 	{
-		$query = "SELECT products.id, products.name, products.price, updated_at, manufacturer_id as manufacturer 
+		$query = "SELECT products.id, products.name, products.price, created_at, manufacturer_id as manufacturer 
 					FROM products LEFT JOIN manufacturers ON products.manufacturer_id = manufacturers.id";
 		return $this->db->query($query)->result_array();
 	}
 
 	public function create($product)
 	{
-		$query = "INSERT INTO products (name, price, updated_at, manufacturer_id) VALUES (?, ?, NOW(), ?)";
+		$query = "INSERT INTO products (manufacturers_name, name, price, created_at) VALUES (?, ?, NOW(), ?)";
 		$value = array(
+			$product['manufacturers_name'],
 			$product['name'],
 			$product['price'],
-			$product['manufacturer_id']
 		);
 		$this->db->query($query, $value);
 	}
