@@ -6,13 +6,14 @@ class Products extends CI_Controller {
 	{
 		$this->load->model('Product');
 		$products = $this->Product->get_all_products();
-		$this->load->view('all_products', array('products' => $products));
+		$this->load->view('all_products', ['products' => $products]);
 	}
 	public function create()
 	{
 		$this->load->model("Product");
 		$product = $this->input->post();
-		$this->Product->create($product);
+		$this->Product->manufacturer($product);
+		$this->Product->product($product);
 		redirect(base_url("products"));
 	}
 	

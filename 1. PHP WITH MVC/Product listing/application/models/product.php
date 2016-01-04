@@ -4,20 +4,46 @@ class Product extends CI_Model {
 	
 	public function get_all_products()
 	{
-		$query = "SELECT products.id, products.name, products.price, created_at, manufacturer_id as manufacturer 
-					FROM products LEFT JOIN manufacturers ON products.manufacturer_id = manufacturers.id";
+		$query = "SELECT * FROM Products JOIN Manufacturers ON Products.Manufacturer_id = Manufacturers.id";
+		// SELECT products.id, products.name, products.price, created_at, manufacturer_id as manufacturer 
+					//FROM products LEFT JOIN manufacturers ON products.manufacturer_id = manufacturers.id;
 		return $this->db->query($query)->result_array();
 	}
 
-	public function create($product)
+	// public function get_id_by_name($name)
+	// {
+	// 	$query = "SELECT id FROM Manufacturers WHERE Manufacturers.manufacturer_name = ?";
+	// 	$id = $this->db->query($query)->row_array();
+	// 	return $id[0];
+	// }
+
+	public function manufacturer($product)
 	{
-		$query = "INSERT INTO products (manufacturers_name, name, price, created_at) VALUES (?, ?, NOW(), ?)";
+		
+		$query = "INSERT INTO manufacturers (manufacturer_name) VALUES (?)";
+		$value = array($product['manufacturer_name']);
+		$this->db->query($query, $value);
+	}
+
+	public function product($product)
+	{
+		$this->load->model('Product');
+		$id = $this->Product->get_id_by_name($product['manufacturer_name']);
+		$query = "INSERT INTO products (product_name, price, created_at, Manufacturer_id) VALUES (?, ?, NOW(), ?)";
 		$value = array(
-			$product['manufacturers_name'],
-			$product['name'],
+			$product['product_name'],
 			$product['price'],
+			$id
 		);
 		$this->db->query($query, $value);
+	}
+
+
+	public function get_id_by_name($name)
+	{
+		$query = "SELECT id FROM Manufacturers WHERE Manufacturers.manufacturer_name = ?";
+		$id = $this->db->query($query, $name)->row_array();
+		return $id;
 	}
 // 	public function delete($id)
 // 	{

@@ -6,6 +6,8 @@
 <body>
 <h2> Trader's Store: </h2>
 
+<?php var_dump($products); ?>
+
 <table border="1" style="width:100%">
 	<legend>Product Listing:</legend><br>
 
@@ -18,8 +20,8 @@
 	</tr>
 	<?php foreach ($products as $product) { ?>
 	<tr>
-		<td><?= $product['manufacturer'] ?></td>
-		<td><?= $product['name'] ?></td>
+		<td><?= $product['manufacturer_name'] ?></td>
+		<td><?= $product['product_name'] ?></td>
 		<td><?= $product['price'] ?></td>
 		<td><?= $product['created_at'] ?></td>
 		<td>
@@ -37,10 +39,10 @@
 		<legend>Add a product: </legend><br>
 
 		<Label>Manufacturer/Brand: </label>
-		<input type="text" name="manufacturer"><br>
+		<input type="text" name="manufacturer_name"><br>
 
 		<Label>Product Name: </label>
-		<input type="text" name="name"><br>
+		<input type="text" name="product_name"><br>
 
 		<Label>Price ($): </label>
 		<input type="text" name="price"><br>
